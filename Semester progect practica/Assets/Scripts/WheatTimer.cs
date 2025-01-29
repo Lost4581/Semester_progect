@@ -7,9 +7,11 @@ using UnityEngine.UI;
 public class WheatTimer: MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI howManyW;
-    [SerializeField] private int maxTimeWheat; 
+    [SerializeField] private int maxTimeWheat;
+    [SerializeField] GameObject mill;
     public int howManyWheat = 0;
     float currTime;
+
 
     private void Start()
     {
@@ -18,7 +20,11 @@ public class WheatTimer: MonoBehaviour
     }
     private void Update()
     {
-        timerWheat();
+        if (mill.activeInHierarchy == true)
+        {
+            timerWheat();
+        }
+            
     }
     public void timerWheat()
     {
