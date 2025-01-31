@@ -18,6 +18,7 @@ public class IronTimer : MonoBehaviour
     [SerializeField] GameObject mine9;
     public int howManyIron;
     public int maxIron;
+    public int addIron;
     float currTime;
 
     private void Start()
@@ -43,7 +44,7 @@ public class IronTimer : MonoBehaviour
         else
         {
             currTime = maxTimeIron;
-            AddIron(1);
+            AddIron(addIron);
         }
         if (howManyIron > maxIron)
         {

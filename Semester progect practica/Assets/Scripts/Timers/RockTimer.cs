@@ -18,6 +18,7 @@ public class RockTimer : MonoBehaviour
     [SerializeField] GameObject mine9;
     public int howManyRock;
     public int maxRock;
+    public int addRock;
     float currTime;
 
     private void Start()
@@ -43,7 +44,7 @@ public class RockTimer : MonoBehaviour
         else
         {
             currTime = maxTimeRock;
-            AddRock(1);
+            AddRock(addRock);
         }
         if (howManyRock > maxRock)
         {

@@ -18,6 +18,7 @@ public class WoodTimer : MonoBehaviour
     [SerializeField] GameObject sawmill9;
     public int howManyWood;
     public int maxWood;
+    public int addWood;
     float currTime;
 
 
@@ -44,7 +45,7 @@ public class WoodTimer : MonoBehaviour
         else
         {
             currTime = maxTimeWood;
-            AddWood(1);
+            AddWood(addWood);
         }
         if (howManyWood > maxWood)
         {

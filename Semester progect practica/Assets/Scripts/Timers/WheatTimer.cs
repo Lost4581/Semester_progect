@@ -19,6 +19,7 @@ public class WheatTimer: MonoBehaviour
     [SerializeField] GameObject mill9;
     public int howManyWheat;
     public int maxWheat;
+    public int addWheat;
     float currTime;
 
 
@@ -45,7 +46,7 @@ public class WheatTimer: MonoBehaviour
         else
         {
             currTime = maxTimeWheat;
-            AddWheat(1);
+            AddWheat(addWheat);
         }
         if (howManyWheat > maxWheat)
         {
