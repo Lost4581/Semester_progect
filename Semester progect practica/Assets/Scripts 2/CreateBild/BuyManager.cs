@@ -1,18 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuyManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject buyMenu;
+    [SerializeField] private Button backButton;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        backButton.onClick.AddListener(OnClick);
+    }
+    private void Update()
+    {
+
+    }
+    private void OnMouseDown()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).gameObject.activeInHierarchy)
+            {
+            }
+            else
+            {
+                buyMenu.SetActive(true);
+            }
+        }
+    }
+    private void OnClick()
+    {
+        buyMenu.SetActive(false);
     }
 }
