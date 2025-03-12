@@ -22,6 +22,8 @@ public class BuyManager : MonoBehaviour
         {
             if (transform.GetChild(i).gameObject.activeInHierarchy)
             {
+                buyMenu.SetActive(false);
+                break;
             }
             else
             {
