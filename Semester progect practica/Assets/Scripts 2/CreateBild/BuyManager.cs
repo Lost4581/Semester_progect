@@ -7,14 +7,11 @@ public class BuyManager : MonoBehaviour
 {
     [SerializeField] private GameObject buyMenu;
     [SerializeField] private Button backButton;
+    [SerializeField] private Bilder _bilder;
 
     private void Awake()
     {
         backButton.onClick.AddListener(OnClick);
-    }
-    private void Update()
-    {
-
     }
     private void OnMouseDown()
     {
@@ -30,6 +27,7 @@ public class BuyManager : MonoBehaviour
                 buyMenu.SetActive(true);
             }
         }
+        _bilder.SetCurrentSelection(this);
     }
     private void OnClick()
     {
