@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -50}
-  m_SizeDelta: {x: 242.52, y: 0}
+  m_AnchoredPosition: {x: 55.927483, y: -52.899994}
+  m_SizeDelta: {x: 173.83, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &8219314010084256051
 CanvasRenderer:
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Buy main bilding
+  m_text: Buy sawmill
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 1317873212625961666}
   - component: {fileID: 4473906682940670953}
   m_Layer: 5
-  m_Name: BuyMainBilding
+  m_Name: BuySawmill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

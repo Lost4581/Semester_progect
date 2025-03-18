@@ -1,24 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bilder : MonoBehaviour
 {
-    private BuyManager _currentSelection;
+    [SerializeField] private list<Button> buyButtons;
 
-    private void Update()
+    private void OnMouseDown()
     {
-        CreateBilding();
-    }
-    public void SetCurrentSelection(BuyManager cell)
-    {
-        _currentSelection = cell;
-    }
-    private void CreateBilding()
-    {
-        if (_currentSelection != null)
-        {
-            Debug.Log("1565yae");
-        }
+
     }
 }
