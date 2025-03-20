@@ -6,6 +6,7 @@ public class CameraControl : MonoBehaviour
 {
     [SerializeField] private List<GameObject> cameras;
     [SerializeField] private List<GameObject> cells;
+    [SerializeField] private List<GameObject> descriptions;
     [SerializeField] private GameObject _camera;
     [SerializeField] private GameObject _button;
     [SerializeField] private bool _isActiveButton = false;
@@ -22,6 +23,10 @@ public class CameraControl : MonoBehaviour
         for (int i = 0; i < cells.Count; i++)
         {
             cells[i].GetComponent<Collider>().enabled = _isActiveCell;
+        }
+        for (int i = 0; i < descriptions.Count; i++)
+        {
+            descriptions[i].SetActive(false);
         }
     }
 }
