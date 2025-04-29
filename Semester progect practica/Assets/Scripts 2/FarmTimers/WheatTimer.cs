@@ -5,12 +5,13 @@ using TMPro;
 
 public class WheatTimer: MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI howManyW;
+    [SerializeField] public TextMeshProUGUI howManyW;
     [SerializeField] private List<GameObject> farms;
     [SerializeField] private int maxTimeWheat;
-    [SerializeField] private int howManyWheat;
     [SerializeField] private int maxWheat;
     [SerializeField] private int howManyAddWheat;
+    public int howManyWheat;
+    public float howManyPeasant;
     float currTime;
 
     private void Start()

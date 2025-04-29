@@ -7,7 +7,6 @@ public class ActivateDescription : MonoBehaviour
     [SerializeField] private GameObject _descriptionArsenal;
     [SerializeField] private GameObject _descriptionBarracks;
     [SerializeField] private GameObject _descriptionComposition;
-    [SerializeField] private GameObject _descriptionFarm;
     [SerializeField] private GameObject _descriptionHouse;
     [SerializeField] private GameObject _descriptionMine;
     [SerializeField] private GameObject _descriptionQuarry;
@@ -17,7 +16,6 @@ public class ActivateDescription : MonoBehaviour
     [SerializeField] private GameObject _arsenal;
     [SerializeField] private GameObject _barracks;
     [SerializeField] private GameObject _composition;
-    [SerializeField] private GameObject _farm;
     [SerializeField] private GameObject _house;
     [SerializeField] private GameObject _mine;
     [SerializeField] private GameObject _quarry;
@@ -37,10 +35,6 @@ public class ActivateDescription : MonoBehaviour
         if (_composition.activeInHierarchy)
         {
             _descriptionComposition.SetActive(true);
-        }
-        if (_farm.activeInHierarchy)
-        {
-            _descriptionFarm.SetActive(true);
         }
         if (_house.activeInHierarchy)
         {

@@ -5,12 +5,12 @@ using TMPro;
 
 public class WoodTimer : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI howManyW;
+    [SerializeField] public TextMeshProUGUI howManyW;
     [SerializeField] private List<GameObject> sawmills;
     [SerializeField] private int maxTimeWood;
-    [SerializeField] private int howManyWood;
     [SerializeField] private int maxWood;
     [SerializeField] private int howManyAddWood;
+    public int howManyWood;
     float currTime;
 
     private void Start()

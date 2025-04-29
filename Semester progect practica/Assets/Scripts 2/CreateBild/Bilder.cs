@@ -13,7 +13,6 @@ public class Bilder : MonoBehaviour
     public bool activeArsenal = false;
     public bool activeBarracks = false;
     public bool activeComposition = false;
-    public bool activeFarm = false;
     public bool activeHouse = false;
     public bool activeMine = false;
     public bool activeQuarry = false;
@@ -23,6 +22,14 @@ public class Bilder : MonoBehaviour
     public void activationArsenal()
     {
         activeArsenal = true;
+        activeBarracks = false;
+        activeComposition = false;
+        activeHouse = false;
+        activeMine = false;
+        activeQuarry = false;
+        activeSawmill = false;
+        activeScout = false;
+
         _button.SetActive(false);
         _camera.SetActive(true);
         _buyMenu.SetActive(false);
@@ -38,6 +45,14 @@ public class Bilder : MonoBehaviour
     public void activationBarracks()
     {
         activeBarracks = true;
+        activeArsenal = false;
+        activeComposition = false;
+        activeHouse = false;
+        activeMine = false;
+        activeQuarry = false;
+        activeSawmill = false;
+        activeScout = false;
+
         _button.SetActive(false);
         _camera.SetActive(true);
         _buyMenu.SetActive(false);
@@ -53,21 +68,14 @@ public class Bilder : MonoBehaviour
     public void activationComposition()
     {
         activeComposition = true;
-        _button.SetActive(false);
-        _camera.SetActive(true);
-        _buyMenu.SetActive(false);
-        for (int i = 0; i < cameras.Count; i++)
-        {
-            cameras[i].SetActive(false);
-        }
-        for (int i = 0; i < cells.Count; i++)
-        {
-            cells[i].GetComponent<Collider>().enabled = true;
-        }
-    }
-    public void activationFarm()
-    {
-        activeFarm = true;
+        activeBarracks = false;
+        activeArsenal = false;
+        activeHouse = false;
+        activeMine = false;
+        activeQuarry = false;
+        activeSawmill = false;
+        activeScout = false;
+
         _button.SetActive(false);
         _camera.SetActive(true);
         _buyMenu.SetActive(false);
@@ -83,6 +91,14 @@ public class Bilder : MonoBehaviour
     public void activationHouse()
     {
         activeHouse = true;
+        activeBarracks = false;
+        activeArsenal = false;
+        activeComposition = false;
+        activeMine = false;
+        activeQuarry = false;
+        activeSawmill = false;
+        activeScout = false;
+
         _button.SetActive(false);
         _camera.SetActive(true);
         _buyMenu.SetActive(false);
@@ -98,6 +114,14 @@ public class Bilder : MonoBehaviour
     public void activationMine()
     {
         activeMine = true;
+        activeHouse = false;
+        activeBarracks = false;
+        activeArsenal = false;
+        activeComposition = false;
+        activeQuarry = false;
+        activeSawmill = false;
+        activeScout = false;
+
         _button.SetActive(false);
         _camera.SetActive(true);
         _buyMenu.SetActive(false);
@@ -113,6 +137,14 @@ public class Bilder : MonoBehaviour
     public void activationQuarry()
     {
         activeQuarry = true;
+        activeHouse = false;
+        activeBarracks = false;
+        activeArsenal = false;
+        activeComposition = false;
+        activeMine = false;
+        activeSawmill = false;
+        activeScout = false;
+
         _button.SetActive(false);
         _camera.SetActive(true);
         _buyMenu.SetActive(false);
@@ -128,6 +160,14 @@ public class Bilder : MonoBehaviour
     public void activationSawmill()
     {
         activeSawmill = true;
+        activeHouse = false;
+        activeBarracks = false;
+        activeArsenal = false;
+        activeComposition = false;
+        activeMine = false;
+        activeQuarry = false;
+        activeScout = false;
+
         _button.SetActive(false);
         _camera.SetActive(true);
         _buyMenu.SetActive(false);
@@ -143,6 +183,14 @@ public class Bilder : MonoBehaviour
     public void activationScout()
     {
         activeScout = true;
+        activeHouse = false;
+        activeBarracks = false;
+        activeArsenal = false;
+        activeComposition = false;
+        activeMine = false;
+        activeQuarry = false;
+        activeSawmill = false;
+
         _button.SetActive(false);
         _camera.SetActive(true);
         _buyMenu.SetActive(false);

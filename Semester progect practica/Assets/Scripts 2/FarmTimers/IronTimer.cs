@@ -5,12 +5,12 @@ using TMPro;
 
 public class IronTimer : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI howManyI;
+    [SerializeField] public TextMeshProUGUI howManyI;
     [SerializeField] private List<GameObject> mines;
     [SerializeField] private int maxTimeIron;
-    [SerializeField] private int howManyIron;
     [SerializeField] private int maxIron;
     [SerializeField] private int howManyAddIron;
+    public int howManyIron;
     float currTime;
 
     private void Start()

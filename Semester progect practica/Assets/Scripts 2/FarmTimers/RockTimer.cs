@@ -5,12 +5,12 @@ using TMPro;
 
 public class RockTimer : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI howManyR;
+    [SerializeField] public TextMeshProUGUI howManyR;
     [SerializeField] private List<GameObject> quarrys;
     [SerializeField] private int maxTimeRock;
-    [SerializeField] private int howManyRock;
     [SerializeField] private int maxRock;
     [SerializeField] private int howManyAddRock;
+    public int howManyRock;
     float currTime;
 
     private void Start()
