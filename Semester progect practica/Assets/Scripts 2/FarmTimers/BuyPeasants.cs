@@ -19,5 +19,11 @@ public class BuyPeasants : MonoBehaviour
         _wheatTimer.howManyWheat -= HowManyNeedWheat;
         howManyP.text = $"{_wheatTimer.howManyPeasant}";
         _wheatTimer.howManyW.text = $"{_wheatTimer.howManyWheat}";
+
+        if (_wheatTimer.howManyPeasant > _wheatTimer.maxPeasant)
+        {
+            _wheatTimer.howManyPeasant = _wheatTimer.maxPeasant;
+            howManyP.text = $"{_wheatTimer.howManyPeasant}";
+        }
     }
 }

@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class StorageHome : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private WheatTimer _wheatTimer;
+
+    [SerializeField] private List<GameObject> Allhouse;
+
+    [SerializeField] private int NewLimitPeasant;
+
+    private void Update()
     {
-        
+        UpLimits();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void UpLimits()
     {
-        
+        for (int i = 0; i  < Allhouse.Count; i++)
+        {
+            if (Allhouse[i].activeInHierarchy)
+            {
+                _wheatTimer.maxPeasant = NewLimitPeasant;
+            }
+        }
     }
 }
