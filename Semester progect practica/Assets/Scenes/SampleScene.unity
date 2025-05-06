@@ -4906,7 +4906,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 40
   m_Viewport: {fileID: 150162146}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
@@ -24009,7 +24009,7 @@ MonoBehaviour:
   - {fileID: 1152885393}
   - {fileID: 798083259}
   - {fileID: 120708999}
-  maxTimeWood: 3
+  maxTimeWood: 4
   maxWood: 30
   howManyAddWood: 1
   howManyWood: 0
@@ -24052,7 +24052,7 @@ MonoBehaviour:
   - {fileID: 1435882275}
   - {fileID: 1766820539}
   - {fileID: 2092450393}
-  maxTimeRock: 3
+  maxTimeRock: 5
   maxRock: 30
   howManyAddRock: 1
   howManyRock: 0
@@ -24075,7 +24075,7 @@ MonoBehaviour:
   - {fileID: 2014407048}
   - {fileID: 243398915}
   - {fileID: 233876128}
-  maxTimeIron: 3
+  maxTimeIron: 6
   maxIron: 30
   howManyAddIron: 1
   howManyIron: 0
@@ -32846,7 +32846,7 @@ MonoBehaviour:
   _rockTimer: {fileID: 870589655}
   _woodTimer: {fileID: 870589653}
   _wheatTimer: {fileID: 870589654}
-  _peasants: {fileID: 0}
+  _peasants: {fileID: 870589657}
   _arsenal: {fileID: 305019354}
   _barracks: {fileID: 144773734}
   _composition: {fileID: 2097269762}
@@ -35710,7 +35710,7 @@ MonoBehaviour:
   _rockTimer: {fileID: 870589655}
   _woodTimer: {fileID: 870589653}
   _wheatTimer: {fileID: 870589654}
-  _peasants: {fileID: 0}
+  _peasants: {fileID: 870589657}
   _arsenal: {fileID: 246477792}
   _barracks: {fileID: 1641041725}
   _composition: {fileID: 1913957232}
@@ -38426,7 +38426,7 @@ MonoBehaviour:
   _rockTimer: {fileID: 870589655}
   _woodTimer: {fileID: 870589653}
   _wheatTimer: {fileID: 870589654}
-  _peasants: {fileID: 0}
+  _peasants: {fileID: 870589657}
   _arsenal: {fileID: 1896618212}
   _barracks: {fileID: 1726008528}
   _composition: {fileID: 11979339}
@@ -39027,6 +39027,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1541323971}
   - component: {fileID: 1541323970}
+  - component: {fileID: 1541323972}
   m_Layer: 0
   m_Name: ScriptManager
   m_TagString: Untagged
@@ -39070,6 +39071,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1541323972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541323969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0cf3b6a14667d44a2ce636ceb4c890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wheatTimer: {fileID: 870589654}
+  _woodTimer: {fileID: 870589653}
+  AllWarehouse:
+  - {fileID: 1913957232}
+  - {fileID: 2029051562}
+  - {fileID: 11979339}
+  - {fileID: 1326770455}
+  - {fileID: 2097269762}
+  NewLimitWheat: 45
+  NewLimitWood: 45
 --- !u!1 &1544107127
 GameObject:
   m_ObjectHideFlags: 0
@@ -41067,7 +41090,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.041341726}
+  m_AnchoredPosition: {x: 0, y: -0.036813043}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1656012736
@@ -46197,7 +46220,7 @@ MonoBehaviour:
   _rockTimer: {fileID: 870589655}
   _woodTimer: {fileID: 870589653}
   _wheatTimer: {fileID: 870589654}
-  _peasants: {fileID: 0}
+  _peasants: {fileID: 870589657}
   _arsenal: {fileID: 1618689757}
   _barracks: {fileID: 201612195}
   _composition: {fileID: 2029051562}
@@ -51709,7 +51732,7 @@ MonoBehaviour:
   _rockTimer: {fileID: 870589655}
   _woodTimer: {fileID: 870589653}
   _wheatTimer: {fileID: 870589654}
-  _peasants: {fileID: 0}
+  _peasants: {fileID: 870589657}
   _arsenal: {fileID: 496543323}
   _barracks: {fileID: 1243117761}
   _composition: {fileID: 1326770455}

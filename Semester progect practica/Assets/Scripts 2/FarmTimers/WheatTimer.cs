@@ -8,7 +8,7 @@ public class WheatTimer: MonoBehaviour
     [SerializeField] public TextMeshProUGUI howManyW;
     [SerializeField] private List<GameObject> farms;
     [SerializeField] private int maxTimeWheat;
-    [SerializeField] private int maxWheat;
+    [SerializeField] public int maxWheat;
     [SerializeField] private int howManyAddWheat;
     public int howManyWheat;
     public float howManyPeasant;
