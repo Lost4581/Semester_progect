@@ -5736,7 +5736,7 @@ MonoBehaviour:
   - {fileID: 798083259}
   - {fileID: 120708999}
   maxTimeWood: 4
-  maxWood: 30
+  maxWood: 10
   howManyAddWood: 1
   howManyWood: 0
 --- !u!114 &870589654
@@ -5756,7 +5756,7 @@ MonoBehaviour:
   - {fileID: 1291117193}
   maxTimeWheat: 3
   maxWheat: 30
-  maxPeasant: 30
+  maxPeasant: 2
   howManyAddWheat: 1
   howManyWheat: 0
   howManyPeasant: 0
@@ -10028,6 +10028,7 @@ GameObject:
   - component: {fileID: 1541323970}
   - component: {fileID: 1541323972}
   - component: {fileID: 1541323973}
+  - component: {fileID: 1541323974}
   m_Layer: 0
   m_Name: ScriptManager
   m_TagString: Untagged
@@ -10113,6 +10114,18 @@ MonoBehaviour:
   - {fileID: 264886492}
   - {fileID: 814559118}
   NewLimitPeasant: 45
+--- !u!114 &1541323974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541323969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98ce9c95e4bf4db40bdb9cc354c8467f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1552073703 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 90503cee03eca054f876f289374529a5, type: 3}
