@@ -6,34 +6,73 @@ using TMPro;
 
 public class SendExpeditions : MonoBehaviour
 {
-    private bool canSending = true;
 
+    [SerializeField] private WheatTimer wheatTimer;
+    [SerializeField] private IronTimer ironTimer;
+    [SerializeField] private RockTimer rockTimer;
+    [SerializeField] private WoodTimer woodTimer;
+
+    [SerializeField] private BuyScouts buyScouts;
     [SerializeField] private TextMeshProUGUI howManySec;
 
+    [SerializeField] private int howManyAddWheat;
+    [SerializeField] private int howManyAddIron;
+    [SerializeField] private int howManyAddRock;
+    [SerializeField] private int howManyAddWood;
+
+    [SerializeField] private float howManyNeedScout;
+
     [SerializeField] private float startTime;
-    private float curTime;
+    private float _currTime;
+    private bool _canSending = true;
 
     private void Start()
     {
-        curTime = startTime;
-        canSending = true;
+        _currTime = startTime;
+        _canSending = false;
     }
 
     private void Update()
     {
-        howManySec.text = $"{curTime}";
-        if (curTime <= 0)
-        {
-            canSending = false;
-        }
+        howManySec.text = "";
+        ExpeditionTimer();
     }
 
     public void SendExpedition()
     {
-        if (canSending)
+        if (buyScouts.HowManyScouts >= howManyNeedScout)
         {
-            curTime -= Time.deltaTime;
-            canSending = false;
+            _canSending = true;
+            buyScouts.HowManyScouts -= howManyNeedScout;
+            buyScouts.howManyScouts.text = $"Исследователи: {buyScouts.HowManyScouts}/5";
         }
+    }
+
+    private void ExpeditionTimer()
+    {
+        if (_canSending && _currTime > 0)
+        {
+            _currTime -= Time.deltaTime;
+            howManySec.text = $"{_currTime}";
+        }
+        else if (_currTime <= 0)
+        {
+            _canSending = false;
+            _currTime = startTime;
+            AddResourses();
+        }
+    }
+
+    private void AddResourses()
+    {
+        wheatTimer.howManyWheat += howManyAddWheat;
+        ironTimer.howManyIron += howManyAddIron;
+        rockTimer.howManyRock += howManyAddRock;
+        woodTimer.howManyWood += howManyAddWood;
+
+        wheatTimer.howManyW.text = $"{wheatTimer.howManyWheat}";
+        ironTimer.howManyI.text = $"{ironTimer.howManyIron}";
+        rockTimer.howManyR.text = $"{rockTimer.howManyRock}";
+        woodTimer.howManyW.text = $"{woodTimer.howManyWood}";
     }
 }

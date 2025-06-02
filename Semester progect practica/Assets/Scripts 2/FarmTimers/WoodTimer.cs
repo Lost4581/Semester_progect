@@ -9,7 +9,7 @@ public class WoodTimer : MonoBehaviour
     [SerializeField] private List<GameObject> sawmills;
     [SerializeField] private int maxTimeWood;
     [SerializeField] public int maxWood;
-    [SerializeField] private int howManyAddWood;
+    [SerializeField] public int howManyAddWood;
     public int howManyWood;
     float currTime;
 

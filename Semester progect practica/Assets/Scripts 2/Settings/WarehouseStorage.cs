@@ -9,8 +9,8 @@ public class WarehouseStorage : MonoBehaviour
 
     [SerializeField] private List<GameObject> AllWarehouse;
 
-    [SerializeField] private int NewLimitWheat;
-    [SerializeField] private int NewLimitWood;
+    [SerializeField] public int NewLimitWheat;
+    [SerializeField] public int NewLimitWood;
 
     private void Update()
     {

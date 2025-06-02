@@ -9,7 +9,7 @@ public class RockTimer : MonoBehaviour
     [SerializeField] private List<GameObject> quarrys;
     [SerializeField] private int maxTimeRock;
     [SerializeField] private int maxRock;
-    [SerializeField] private int howManyAddRock;
+    [SerializeField] public int howManyAddRock;
     public int howManyRock;
     float currTime;
 

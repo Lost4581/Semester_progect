@@ -10,7 +10,7 @@ public class WheatTimer: MonoBehaviour
     [SerializeField] private int maxTimeWheat;
     [SerializeField] public int maxWheat;
     [SerializeField] public int maxPeasant;
-    [SerializeField] private int howManyAddWheat;
+    [SerializeField] public int howManyAddWheat;
     public int howManyWheat;
     public float howManyPeasant;
     float currTime;

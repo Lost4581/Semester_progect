@@ -9,7 +9,7 @@ public class IronTimer : MonoBehaviour
     [SerializeField] private List<GameObject> mines;
     [SerializeField] private int maxTimeIron;
     [SerializeField] private int maxIron;
-    [SerializeField] private int howManyAddIron;
+    [SerializeField] public int howManyAddIron;
     public int howManyIron;
     float currTime;
 
