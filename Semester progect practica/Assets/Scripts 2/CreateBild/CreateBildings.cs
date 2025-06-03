@@ -13,7 +13,7 @@ public class CreateBildings : MonoBehaviour
     
     [SerializeField] private GameObject _arsenal;
     [SerializeField] private GameObject _barracks;
-    [SerializeField] private GameObject _composition;
+    [SerializeField] private GameObject _warehouse;
     [SerializeField] private GameObject _house;
     [SerializeField] private GameObject _mine;
     [SerializeField] private GameObject _quarry;
@@ -87,7 +87,7 @@ public class CreateBildings : MonoBehaviour
             }
             if (_bilder.activeComposition)
             {
-                _composition.SetActive(true);
+                _warehouse.SetActive(true);
                 _buyComposition.SetActive(false);
                 _descriptionComposition.SetActive(true);
                 _bilder.activeComposition = false;
