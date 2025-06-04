@@ -13,48 +13,80 @@ public class ActivateDescription : MonoBehaviour
     [SerializeField] private GameObject _descriptionSawmill;
     [SerializeField] private GameObject _descriptionScout;
 
-    [SerializeField] private GameObject _arsenal;
-    [SerializeField] private GameObject _barracks;
-    [SerializeField] private GameObject _warehouse;
-    [SerializeField] private GameObject _house;
-    [SerializeField] private GameObject _mine;
-    [SerializeField] private GameObject _quarry;
-    [SerializeField] private GameObject _sawmill;
-    [SerializeField] private GameObject _scout;
+    [SerializeField] private List<GameObject> _arsenal;
+    [SerializeField] private List<GameObject> _barracks;
+    [SerializeField] private List<GameObject> _warehouse;
+    [SerializeField] private List<GameObject> _house;
+    [SerializeField] private List<GameObject> _mine;
+    [SerializeField] private List<GameObject> _quarry;
+    [SerializeField] private List<GameObject> _sawmill;
+    [SerializeField] private List<GameObject> _scout;
 
     private void OnMouseDown()
     {
-        if ( _arsenal.activeInHierarchy)
+        for (int i = 0; i < _arsenal.Count; i++)
         {
-            _descriptionArsenal.SetActive(true);
+            if (_arsenal[i].activeInHierarchy)
+            {
+                _descriptionArsenal.SetActive(true);
+            }
         }
-        if (_barracks.activeInHierarchy)
+
+        for (int i = 0; i < _barracks.Count; i++)
         {
-            _descriptionBarracks.SetActive(true);
+            if (_barracks[i].activeInHierarchy)
+            {
+                _descriptionBarracks.SetActive(true);
+            }
         }
-        if (_warehouse.activeInHierarchy)
+        
+        for (int i = 0; i < _warehouse.Count; i++)
         {
-            _descriptionWarehouse.SetActive(true);
+            if (_warehouse[i].activeInHierarchy)
+            {
+                _descriptionWarehouse.SetActive(true);
+            }
         }
-        if (_house.activeInHierarchy)
+
+        for (int i = 0; i < _house.Count; i++)
         {
-            _descriptionHouse.SetActive(true);
+            if (_house[i].activeInHierarchy)
+            {
+                _descriptionHouse.SetActive(true);
+            }
         }
-        if (_mine.activeInHierarchy)
+        
+        for (int i = 0; i < _mine.Count; i++)
         {
-            _descriptionMine.SetActive(true);
+            if (_mine[i].activeInHierarchy)
+            {
+                _descriptionMine.SetActive(true);
+            }
         }
-        if (_quarry.activeInHierarchy)
+        
+        for (int i = 0; i < _quarry.Count; i++)
         {
-            _descriptionQuarry.SetActive(true);
+            if (_quarry[i].activeInHierarchy)
+            {
+                _descriptionQuarry.SetActive(true);
+            }
         }
-        if (_sawmill.activeInHierarchy)
+        
+        for (int i = 0; i < _sawmill.Count; i++)
         {
-            _descriptionSawmill.SetActive(true);
+            if (_sawmill[i].activeInHierarchy)
+            {
+                _descriptionSawmill.SetActive(true);
+            }
         }
-        if (_scout.activeInHierarchy)
+        
+        for (int i = 0; i < _scout.Count; i++)
         {
-            _descriptionScout.SetActive(true);
+            if (_scout[i].activeInHierarchy)
+            {
+                _descriptionScout.SetActive(true);
+            }
         }
+        
     }
 }

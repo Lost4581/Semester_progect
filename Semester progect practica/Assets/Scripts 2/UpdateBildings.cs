@@ -11,19 +11,21 @@ public class UpdateBildings : MonoBehaviour
     [SerializeField] private BuyPeasants peasantsScript;
     [SerializeField] private WarehouseStorage warehouseScript;
 
+    [SerializeField] private ActivateFarmDescription activateFarmDescription;
+
     [SerializeField] private GameObject previousLVL;
     [SerializeField] private GameObject nextLVL;
 
     [SerializeField] private GameObject buyButton;
     [SerializeField] private GameObject buyButtonBG;
 
-    [SerializeField] private int newWheatCout = 2;
-    [SerializeField] private int newIronCout = 2;
-    [SerializeField] private int newRockCout = 2;
-    [SerializeField] private int newWoodCout = 2;
+    [SerializeField] private int addWheatForCout;
+    [SerializeField] private int addIronForCout;
+    [SerializeField] private int addRockForCout;
+    [SerializeField] private int addWoodForCout;
 
-    [SerializeField] private int newNewLimitForWheat = 50;
-    [SerializeField] private int newNewLimitForWood = 50;
+    [SerializeField] private int addForLimitWheat = 5;
+    [SerializeField] private int addForLimitWood = 5;
 
     [SerializeField] private int howManyNeedWheat;
     [SerializeField] private int howManyNeedIron;
@@ -41,7 +43,7 @@ public class UpdateBildings : MonoBehaviour
 
     public void UpdateBilding()
     {
-        if (_canUpdating)
+        if (_canUpdating && previousLVL.activeInHierarchy)
         {
             _canChecking = false;
 
@@ -51,16 +53,17 @@ public class UpdateBildings : MonoBehaviour
             buyButtonBG.SetActive(false);
             buyButton.SetActive(false);
 
-            wheatTimer.howManyAddWheat = newWheatCout;
-            ironTimer.howManyAddIron = newIronCout;
-            rockTimer.howManyAddRock = newRockCout;
-            woodTimer.howManyAddWood = newWoodCout;
+            wheatTimer.howManyAddWheat += addWheatForCout;
+            ironTimer.howManyAddIron += addIronForCout;
+            rockTimer.howManyAddRock += addRockForCout;
+            woodTimer.howManyAddWood += addWoodForCout;
 
-            warehouseScript.NewLimitWheat = newNewLimitForWheat;
-            warehouseScript.NewLimitWood = newNewLimitForWood;
+            warehouseScript.NewLimitWheat = addForLimitWheat;
+            warehouseScript.NewLimitWood = addForLimitWood;
 
             wheatTimer.howManyWheat -= howManyNeedWheat;
             wheatTimer.howManyW.text = $"{wheatTimer.howManyWheat}";
+            activateFarmDescription.infoAboutResourses.text = $"Пшеница:\nДобывается в сек {wheatTimer.howManyAddWheat}";
 
             ironTimer.howManyIron -= howManyNeedIron;
             ironTimer.howManyI.text = $"{ironTimer.howManyIron}";
@@ -83,7 +86,7 @@ public class UpdateBildings : MonoBehaviour
             rockTimer.howManyRock >= howManyNeedRock &&
             woodTimer.howManyWood >= howManyNeedWood &&
             wheatTimer.howManyPeasant >= howManyNeedPeasant &&
-            _canChecking)
+            _canChecking && previousLVL.activeInHierarchy)
         {
             _canUpdating = true;
             buyButton.SetActive(true);
@@ -94,7 +97,7 @@ public class UpdateBildings : MonoBehaviour
             rockTimer.howManyRock <= howManyNeedRock &&
             woodTimer.howManyWood <= howManyNeedWood &&
             wheatTimer.howManyPeasant <= howManyNeedPeasant &&
-            _canChecking)
+            _canChecking && previousLVL.activeInHierarchy)
         {
             _canUpdating = false;
             buyButton.SetActive(false);
