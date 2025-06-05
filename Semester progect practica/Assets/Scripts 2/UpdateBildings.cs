@@ -10,6 +10,7 @@ public class UpdateBildings : MonoBehaviour
     [SerializeField] private WoodTimer woodTimer;
     [SerializeField] private BuyPeasants peasantsScript;
     [SerializeField] private WarehouseStorage warehouseScript;
+    [SerializeField] private StorageHome storageHome;
 
     [SerializeField] private ActivateFarmDescription activateFarmDescription;
 
@@ -24,8 +25,16 @@ public class UpdateBildings : MonoBehaviour
     [SerializeField] private int addRockForCout;
     [SerializeField] private int addWoodForCout;
 
+    [SerializeField] private int addForLimitRock = 5;
+    [SerializeField] private int addForLimitIron = 5;
     [SerializeField] private int addForLimitWheat = 5;
     [SerializeField] private int addForLimitWood = 5;
+    [SerializeField] private int addForLimitPeasant = 5;
+
+    [SerializeField] private int addForMaxTimeRock = -1;
+    [SerializeField] private int addForMaxTimeIron = -1;
+    [SerializeField] private int addForMaxTimeWheat = -1;
+    [SerializeField] private int addForMaxTimeWood = -1;
 
     [SerializeField] private int howManyNeedWheat;
     [SerializeField] private int howManyNeedIron;
@@ -33,6 +42,7 @@ public class UpdateBildings : MonoBehaviour
     [SerializeField] private int howManyNeedWood;
     [SerializeField] private int howManyNeedPeasant;
 
+    //private bool MainBuildingLVL2 = false;
     private bool _canUpdating = false;
     private bool _canChecking = true;
 
@@ -58,12 +68,20 @@ public class UpdateBildings : MonoBehaviour
             rockTimer.howManyAddRock += addRockForCout;
             woodTimer.howManyAddWood += addWoodForCout;
 
-            warehouseScript.NewLimitWheat = addForLimitWheat;
-            warehouseScript.NewLimitWood = addForLimitWood;
+            wheatTimer.maxTimeWheat += addForMaxTimeWheat;
+            ironTimer.maxTimeIron += addForMaxTimeIron;
+            rockTimer.maxTimeRock += addForMaxTimeRock;
+            woodTimer.maxTimeWood += addForMaxTimeWood;
+
+            warehouseScript.NewLimitRock += addForLimitRock;
+            warehouseScript.NewLimitIron += addForLimitIron;
+            warehouseScript.NewLimitWheat += addForLimitWheat;
+            warehouseScript.NewLimitWood += addForLimitWood;
+            storageHome.NewLimitPeasant += addForLimitPeasant;
 
             wheatTimer.howManyWheat -= howManyNeedWheat;
             wheatTimer.howManyW.text = $"{wheatTimer.howManyWheat}";
-            activateFarmDescription.infoAboutResourses.text = $"Пшеница:\nДобывается в сек {wheatTimer.howManyAddWheat}";
+            activateFarmDescription.infoAboutResourses.text = $"Пшеница:\nДобывается в 3 сек - {wheatTimer.howManyAddWheat}";
 
             ironTimer.howManyIron -= howManyNeedIron;
             ironTimer.howManyI.text = $"{ironTimer.howManyIron}";
@@ -104,4 +122,9 @@ public class UpdateBildings : MonoBehaviour
             buyButtonBG.SetActive(true);
         }
     }
+
+    /*public void MainBuildingIsLVL2()
+    {
+        MainBuildingLVL2 = true;
+    }*/
 }

@@ -7,8 +7,8 @@ public class RockTimer : MonoBehaviour
 {
     [SerializeField] public TextMeshProUGUI howManyR;
     [SerializeField] private List<GameObject> quarrys;
-    [SerializeField] private int maxTimeRock;
-    [SerializeField] private int maxRock;
+    [SerializeField] public int maxTimeRock;
+    [SerializeField] public int maxRock;
     [SerializeField] public int howManyAddRock;
     public int howManyRock;
     float currTime;
@@ -25,6 +25,7 @@ public class RockTimer : MonoBehaviour
             if (quarrys[i].activeInHierarchy)
             {
                 timerRock();
+                howManyR.text = $"{howManyRock}";
             }
         } 
     }
@@ -42,13 +43,13 @@ public class RockTimer : MonoBehaviour
         if (howManyRock > maxRock)
         {
             howManyRock = maxRock;
-            howManyR.text = $"{howManyRock}";
+            //howManyR.text = $"{howManyRock}";
         }
     }
     public void AddRock(int value)
     {
         howManyRock += value;
-        howManyR.text = $"{howManyRock}";
+        //howManyR.text = $"{howManyRock}";
     }
 }
 

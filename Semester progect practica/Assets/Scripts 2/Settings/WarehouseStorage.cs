@@ -6,12 +6,16 @@ public class WarehouseStorage : MonoBehaviour
 {
     [SerializeField] private WheatTimer _wheatTimer;
     [SerializeField] private WoodTimer _woodTimer;
+    [SerializeField] private IronTimer _ironTimer;
+    [SerializeField] private RockTimer _rockTimer;
 
     [SerializeField] private List<GameObject> AllWarehouse;
 
     [SerializeField] public int NewLimitWheat;
     [SerializeField] public int NewLimitWood;
-
+    [SerializeField] public int NewLimitIron;
+    [SerializeField] public int NewLimitRock;
+    
     private void Update()
     {
         UpLimits();
@@ -24,6 +28,8 @@ public class WarehouseStorage : MonoBehaviour
             {
                 _wheatTimer.maxWheat = NewLimitWheat;
                 _woodTimer.maxWood = NewLimitWood;
+                _ironTimer.maxIron = NewLimitIron;
+                _rockTimer.maxRock = NewLimitRock;
             }
         }
     }

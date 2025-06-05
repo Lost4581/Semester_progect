@@ -7,7 +7,7 @@ public class WoodTimer : MonoBehaviour
 {
     [SerializeField] public TextMeshProUGUI howManyW;
     [SerializeField] private List<GameObject> sawmills;
-    [SerializeField] private int maxTimeWood;
+    [SerializeField] public int maxTimeWood;
     [SerializeField] public int maxWood;
     [SerializeField] public int howManyAddWood;
     public int howManyWood;
@@ -25,6 +25,7 @@ public class WoodTimer : MonoBehaviour
             if (sawmills[i].activeInHierarchy)
             {
                 timerWood();
+                howManyW.text = $"{howManyWood}";
             }
         }  
     }
@@ -42,12 +43,12 @@ public class WoodTimer : MonoBehaviour
         if (howManyWood > maxWood)
         {
             howManyWood = maxWood;
-            howManyW.text = $"{howManyWood}";
+            //howManyW.text = $"{howManyWood}";
         }
     }
     public void AddWood(int value)
     {
         howManyWood += value;
-        howManyW.text = $"{howManyWood}";
+        //howManyW.text = $"{howManyWood}";
     }
 }

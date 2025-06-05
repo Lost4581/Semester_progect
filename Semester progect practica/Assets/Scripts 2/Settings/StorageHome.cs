@@ -8,7 +8,7 @@ public class StorageHome : MonoBehaviour
 
     [SerializeField] private List<GameObject> Allhouse;
 
-    [SerializeField] private int NewLimitPeasant;
+    [SerializeField] public int NewLimitPeasant;
 
     private void Update()
     {

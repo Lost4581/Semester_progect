@@ -13,6 +13,6 @@ public class ActivateFarmDescription : MonoBehaviour
     private void OnMouseDown()
     {
         _descriptionFarm.SetActive(true);
-        infoAboutResourses.text = $"Пшеница:\nДобывается в сек {wheatTimer.howManyAddWheat}";
+        infoAboutResourses.text = $"Пшеница:\nДобывается в 3 сек - {wheatTimer.howManyAddWheat}";
     }
 }

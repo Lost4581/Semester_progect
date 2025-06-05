@@ -7,7 +7,7 @@ public class WheatTimer: MonoBehaviour
 {
     [SerializeField] public TextMeshProUGUI howManyW;
     [SerializeField] private List<GameObject> farms;
-    [SerializeField] private int maxTimeWheat;
+    [SerializeField] public int maxTimeWheat;
     [SerializeField] public int maxWheat;
     [SerializeField] public int maxPeasant;
     [SerializeField] public int howManyAddWheat;
@@ -27,6 +27,7 @@ public class WheatTimer: MonoBehaviour
             if (farms[i].activeInHierarchy)
             {
                 timerWheat();
+                howManyW.text = $"{howManyWheat}";
             }
         }  
     }
@@ -44,12 +45,12 @@ public class WheatTimer: MonoBehaviour
         if (howManyWheat > maxWheat)
         {
             howManyWheat = maxWheat;
-            howManyW.text = $"{howManyWheat}";
+            //howManyW.text = $"{howManyWheat}";
         }
     }
     public void AddWheat(int value)
     {
         howManyWheat += value;
-        howManyW.text = $"{howManyWheat}";
+        //howManyW.text = $"{howManyWheat}";
     }
 }
