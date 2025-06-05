@@ -42,7 +42,6 @@ public class UpdateBildings : MonoBehaviour
     [SerializeField] private int howManyNeedWood;
     [SerializeField] private int howManyNeedPeasant;
 
-    //private bool MainBuildingLVL2 = false;
     private bool _canUpdating = false;
     private bool _canChecking = true;
 
@@ -122,9 +121,4 @@ public class UpdateBildings : MonoBehaviour
             buyButtonBG.SetActive(true);
         }
     }
-
-    /*public void MainBuildingIsLVL2()
-    {
-        MainBuildingLVL2 = true;
-    }*/
 }
