@@ -5,11 +5,15 @@ using UnityEngine;
 public class CreateBildings : MonoBehaviour
 {
     [SerializeField] private Bilder _bilder;
-
+    [SerializeField] private IronTimer _ironTimer;
+    [SerializeField] private RockTimer _rockTimer;
+    [SerializeField] private WoodTimer _woodTimer;
+    [SerializeField] private WheatTimer _wheatTimer;
+    [SerializeField] private BuyPeasants _peasants;
+    
     [SerializeField] private GameObject _arsenal;
     [SerializeField] private GameObject _barracks;
-    [SerializeField] private GameObject _composition;
-    [SerializeField] private GameObject _farm;    
+    [SerializeField] private GameObject _warehouse;
     [SerializeField] private GameObject _house;
     [SerializeField] private GameObject _mine;
     [SerializeField] private GameObject _quarry;
@@ -19,7 +23,6 @@ public class CreateBildings : MonoBehaviour
     [SerializeField] private GameObject _buyArsenal;
     [SerializeField] private GameObject _buyBarracks;
     [SerializeField] private GameObject _buyComposition;
-    [SerializeField] private GameObject _buyFarm;
     [SerializeField] private GameObject _buyHouse;
     [SerializeField] private GameObject _buyMine;
     [SerializeField] private GameObject _buyQuarry;    
@@ -29,7 +32,6 @@ public class CreateBildings : MonoBehaviour
     [SerializeField] private GameObject _descriptionArsenal;
     [SerializeField] private GameObject _descriptionBarracks;
     [SerializeField] private GameObject _descriptionComposition;
-    [SerializeField] private GameObject _descriptionFarm;
     [SerializeField] private GameObject _descriptionHouse;
     [SerializeField] private GameObject _descriptionMine;
     [SerializeField] private GameObject _descriptionQuarry;
@@ -55,6 +57,16 @@ public class CreateBildings : MonoBehaviour
                 _buyArsenal.SetActive(false);
                 _descriptionArsenal.SetActive(true);
                 _bilder.activeArsenal = false;
+
+                _wheatTimer.howManyPeasant -= 6;
+                _woodTimer.howManyWood -= 15;
+                _rockTimer.howManyRock -= 15;
+
+                _ironTimer.howManyI.text = $"{_ironTimer.howManyIron}";
+                _rockTimer.howManyR.text = $"{_rockTimer.howManyRock}";
+                _woodTimer.howManyW.text = $"{_woodTimer.howManyWood}";
+                _wheatTimer.howManyW.text = $"{_wheatTimer.howManyWheat}";
+                _peasants.howManyP.text = $"{_wheatTimer.howManyPeasant}";
             }
             if (_bilder.activeBarracks)
             {
@@ -62,20 +74,31 @@ public class CreateBildings : MonoBehaviour
                 _buyBarracks.SetActive(false);
                 _descriptionBarracks.SetActive(true);
                 _bilder.activeBarracks = false;
+
+                _wheatTimer.howManyPeasant -= 3;
+                _woodTimer.howManyWood -= 10;
+                _wheatTimer.howManyWheat -= 35;
+
+                _ironTimer.howManyI.text = $"{_ironTimer.howManyIron}";
+                _rockTimer.howManyR.text = $"{_rockTimer.howManyRock}";
+                _woodTimer.howManyW.text = $"{_woodTimer.howManyWood}";
+                _wheatTimer.howManyW.text = $"{_wheatTimer.howManyWheat}";
+                _peasants.howManyP.text = $"{_wheatTimer.howManyPeasant}";
             }
             if (_bilder.activeComposition)
             {
-                _composition.SetActive(true);
+                _warehouse.SetActive(true);
                 _buyComposition.SetActive(false);
                 _descriptionComposition.SetActive(true);
                 _bilder.activeComposition = false;
-            }
-            if (_bilder.activeFarm)
-            {
-                _farm.SetActive(true);
-                _buyFarm.SetActive(false);
-                _descriptionFarm.SetActive(true);
-                _bilder.activeFarm = false;
+
+                _wheatTimer.howManyPeasant -= 1;
+                _woodTimer.howManyWood -= 10;
+                _wheatTimer.howManyWheat -= 20;
+
+                _woodTimer.howManyW.text = $"{_woodTimer.howManyWood}";
+                _wheatTimer.howManyW.text = $"{_wheatTimer.howManyWheat}";
+                _peasants.howManyP.text = $"{_wheatTimer.howManyPeasant}";
             }
             if (_bilder.activeHouse)
             {
@@ -83,6 +106,14 @@ public class CreateBildings : MonoBehaviour
                 _buyHouse.SetActive(false);
                 _descriptionHouse.SetActive(true);
                 _bilder.activeHouse = false;
+
+                _wheatTimer.howManyPeasant -= 1;
+                _woodTimer.howManyWood -= 15;
+                _wheatTimer.howManyWheat -= 20;
+
+                _woodTimer.howManyW.text = $"{_woodTimer.howManyWood}";
+                _wheatTimer.howManyW.text = $"{_wheatTimer.howManyWheat}";
+                _peasants.howManyP.text = $"{_wheatTimer.howManyPeasant}";
             }
             if (_bilder.activeMine)
             {
@@ -90,6 +121,16 @@ public class CreateBildings : MonoBehaviour
                 _buyMine.SetActive(false);
                 _descriptionMine.SetActive(true);
                 _bilder.activeMine = false;
+
+                _wheatTimer.howManyPeasant -= 4;
+                _woodTimer.howManyWood -= 20;
+                _rockTimer.howManyRock -= 15;
+                _ironTimer.howManyIron -= 5;
+
+                _ironTimer.howManyI.text = $"{_ironTimer.howManyIron}";
+                _rockTimer.howManyR.text = $"{_rockTimer.howManyRock}";
+                _woodTimer.howManyW.text = $"{_woodTimer.howManyWood}";
+                _peasants.howManyP.text = $"{_wheatTimer.howManyPeasant}";
             }
             if (_bilder.activeQuarry)
             {
@@ -97,6 +138,14 @@ public class CreateBildings : MonoBehaviour
                 _buyQuarry.SetActive(false);
                 _descriptionQuarry.SetActive(true);
                 _bilder.activeQuarry = false;
+
+                _wheatTimer.howManyPeasant -= 3;
+                _woodTimer.howManyWood -= 15;
+                _rockTimer.howManyRock -= 5;
+
+                _rockTimer.howManyR.text = $"{_rockTimer.howManyRock}";
+                _woodTimer.howManyW.text = $"{_woodTimer.howManyWood}";
+                _peasants.howManyP.text = $"{_wheatTimer.howManyPeasant}";
             }
             if (_bilder.activeSawmill)
             {
@@ -104,6 +153,14 @@ public class CreateBildings : MonoBehaviour
                 _buySawmill.SetActive(false);
                 _descriptionSawmill.SetActive(true);
                 _bilder.activeSawmill = false;
+
+                _wheatTimer.howManyWheat -= 25;
+                _wheatTimer.howManyPeasant -= 2;
+                _woodTimer.howManyWood -= 10;
+
+                _woodTimer.howManyW.text = $"{_woodTimer.howManyWood}";
+                _wheatTimer.howManyW.text = $"{_wheatTimer.howManyWheat}";
+                _peasants.howManyP.text = $"{_wheatTimer.howManyPeasant}";
             }
             if (_bilder.activeScout)
             {
@@ -111,6 +168,12 @@ public class CreateBildings : MonoBehaviour
                 _buyScout.SetActive(false);
                 _descriptionScout.SetActive(true);
                 _bilder.activeScout = false;
+
+                _wheatTimer.howManyWheat -= 25;
+                _wheatTimer.howManyPeasant -= 2;
+
+                _wheatTimer.howManyW.text = $"{_wheatTimer.howManyWheat}";
+                _peasants.howManyP.text = $"{_wheatTimer.howManyPeasant}";
             }
         }
     }

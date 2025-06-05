@@ -5,12 +5,12 @@ using TMPro;
 
 public class IronTimer : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI howManyI;
+    [SerializeField] public TextMeshProUGUI howManyI;
     [SerializeField] private List<GameObject> mines;
-    [SerializeField] private int maxTimeIron;
-    [SerializeField] private int howManyIron;
-    [SerializeField] private int maxIron;
-    [SerializeField] private int howManyAddIron;
+    [SerializeField] public int maxTimeIron;
+    [SerializeField] public int maxIron;
+    [SerializeField] public int howManyAddIron;
+    public int howManyIron;
     float currTime;
 
     private void Start()
@@ -25,7 +25,13 @@ public class IronTimer : MonoBehaviour
             if (mines[i].activeInHierarchy)
             {
                 timerIron();
+                howManyI.text = $"{howManyIron}";
             }
+        }
+        if (howManyIron > maxIron)
+        {
+            howManyIron = maxIron;
+            howManyI.text = $"{howManyIron}";
         }
     }
     public void timerIron()
@@ -39,16 +45,10 @@ public class IronTimer : MonoBehaviour
             currTime = maxTimeIron;
             AddIron(howManyAddIron);
         }
-        if (howManyIron > maxIron)
-        {
-            howManyIron = maxIron;
-            howManyI.text = $"{howManyIron}";
-        }
     }
     public void AddIron(int value)
     {
         howManyIron += value;
-        howManyI.text = $"{howManyIron}";
     }
 }
 

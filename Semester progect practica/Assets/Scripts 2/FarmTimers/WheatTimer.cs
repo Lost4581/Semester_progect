@@ -5,12 +5,14 @@ using TMPro;
 
 public class WheatTimer: MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI howManyW;
+    [SerializeField] public TextMeshProUGUI howManyW;
     [SerializeField] private List<GameObject> farms;
-    [SerializeField] private int maxTimeWheat;
-    [SerializeField] private int howManyWheat;
-    [SerializeField] private int maxWheat;
-    [SerializeField] private int howManyAddWheat;
+    [SerializeField] public int maxTimeWheat;
+    [SerializeField] public int maxWheat;
+    [SerializeField] public int maxPeasant;
+    [SerializeField] public int howManyAddWheat;
+    public int howManyWheat;
+    public float howManyPeasant;
     float currTime;
 
     private void Start()
@@ -25,8 +27,14 @@ public class WheatTimer: MonoBehaviour
             if (farms[i].activeInHierarchy)
             {
                 timerWheat();
+                howManyW.text = $"{howManyWheat}";
             }
-        }  
+        }
+        if (howManyWheat > maxWheat)
+        {
+            howManyWheat = maxWheat;
+            howManyW.text = $"{howManyWheat}";
+        }
     }
     public void timerWheat()
     {
@@ -39,15 +47,9 @@ public class WheatTimer: MonoBehaviour
             currTime = maxTimeWheat;
             AddWheat(howManyAddWheat);
         }
-        if (howManyWheat > maxWheat)
-        {
-            howManyWheat = maxWheat;
-            howManyW.text = $"{howManyWheat}";
-        }
     }
     public void AddWheat(int value)
     {
         howManyWheat += value;
-        howManyW.text = $"{howManyWheat}";
     }
 }
