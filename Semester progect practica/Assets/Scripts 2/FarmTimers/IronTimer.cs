@@ -28,6 +28,11 @@ public class IronTimer : MonoBehaviour
                 howManyI.text = $"{howManyIron}";
             }
         }
+        if (howManyIron > maxIron)
+        {
+            howManyIron = maxIron;
+            howManyI.text = $"{howManyIron}";
+        }
     }
     public void timerIron()
     {
@@ -40,16 +45,10 @@ public class IronTimer : MonoBehaviour
             currTime = maxTimeIron;
             AddIron(howManyAddIron);
         }
-        if (howManyIron > maxIron)
-        {
-            howManyIron = maxIron;
-            //howManyI.text = $"{howManyIron}";
-        }
     }
     public void AddIron(int value)
     {
         howManyIron += value;
-        //howManyI.text = $"{howManyIron}";
     }
 }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WASDconttroller : MonoBehaviour
+public class WASDConttroller : MonoBehaviour
 {
     [SerializeField] private float speed;
 

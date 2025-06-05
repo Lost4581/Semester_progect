@@ -27,7 +27,12 @@ public class WoodTimer : MonoBehaviour
                 timerWood();
                 howManyW.text = $"{howManyWood}";
             }
-        }  
+        }
+        if (howManyWood > maxWood)
+        {
+            howManyWood = maxWood;
+            howManyW.text = $"{howManyWood}";
+        }
     }
     public void timerWood()
     {
@@ -40,15 +45,9 @@ public class WoodTimer : MonoBehaviour
             currTime = maxTimeWood;
             AddWood(howManyAddWood);
         }
-        if (howManyWood > maxWood)
-        {
-            howManyWood = maxWood;
-            //howManyW.text = $"{howManyWood}";
-        }
     }
     public void AddWood(int value)
     {
         howManyWood += value;
-        //howManyW.text = $"{howManyWood}";
     }
 }

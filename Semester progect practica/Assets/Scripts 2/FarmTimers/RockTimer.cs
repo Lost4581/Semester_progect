@@ -27,7 +27,12 @@ public class RockTimer : MonoBehaviour
                 timerRock();
                 howManyR.text = $"{howManyRock}";
             }
-        } 
+        }
+        if (howManyRock > maxRock)
+        {
+            howManyRock = maxRock;
+            howManyR.text = $"{howManyRock}";
+        }
     }
     public void timerRock()
     {
@@ -40,16 +45,10 @@ public class RockTimer : MonoBehaviour
             currTime = maxTimeRock;
             AddRock(howManyAddRock);
         }
-        if (howManyRock > maxRock)
-        {
-            howManyRock = maxRock;
-            //howManyR.text = $"{howManyRock}";
-        }
     }
     public void AddRock(int value)
     {
         howManyRock += value;
-        //howManyR.text = $"{howManyRock}";
     }
 }
 

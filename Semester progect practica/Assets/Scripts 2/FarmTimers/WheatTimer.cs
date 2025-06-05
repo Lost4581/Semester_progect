@@ -29,7 +29,12 @@ public class WheatTimer: MonoBehaviour
                 timerWheat();
                 howManyW.text = $"{howManyWheat}";
             }
-        }  
+        }
+        if (howManyWheat > maxWheat)
+        {
+            howManyWheat = maxWheat;
+            howManyW.text = $"{howManyWheat}";
+        }
     }
     public void timerWheat()
     {
@@ -42,15 +47,9 @@ public class WheatTimer: MonoBehaviour
             currTime = maxTimeWheat;
             AddWheat(howManyAddWheat);
         }
-        if (howManyWheat > maxWheat)
-        {
-            howManyWheat = maxWheat;
-            //howManyW.text = $"{howManyWheat}";
-        }
     }
     public void AddWheat(int value)
     {
         howManyWheat += value;
-        //howManyW.text = $"{howManyWheat}";
     }
 }

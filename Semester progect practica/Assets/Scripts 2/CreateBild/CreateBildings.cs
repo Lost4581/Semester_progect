@@ -76,8 +76,8 @@ public class CreateBildings : MonoBehaviour
                 _bilder.activeBarracks = false;
 
                 _wheatTimer.howManyPeasant -= 3;
-                _woodTimer.howManyWood -= 35;
-                _wheatTimer.howManyWheat -= 10;
+                _woodTimer.howManyWood -= 10;
+                _wheatTimer.howManyWheat -= 35;
 
                 _ironTimer.howManyI.text = $"{_ironTimer.howManyIron}";
                 _rockTimer.howManyR.text = $"{_rockTimer.howManyRock}";
